@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "2501d2b0-7064-4043-9fb5-dbe6ae1749c9",
+		"name": "map test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17059349",
+		"_collection_link": "https://galactic-resonance-486964.postman.co/workspace/Techpark-it-limited~8104ee53-0ac6-4982-b411-4553a49602f1/collection/17059349-2501d2b0-7064-4043-9fb5-dbe6ae1749c9?action=share&creator=17059349&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "get location details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{api_url}}/places?lat=23.743621&long=90.409994",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"places"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "23.743621"
+						},
+						{
+							"key": "long",
+							"value": "90.409994"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "newmail@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api_url}}/login",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "newaccount@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api_url}}/signup",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
