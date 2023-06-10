@@ -18,7 +18,7 @@ class PlaceController extends Controller
         $response = $client->get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', [
             'query' => [
                 'location' => $request->lat . ',' . $request->long,
-                'radius' => 500000,
+                'radius' => 5000,
                 'key' => env('GOOGLE_MAPS_API_KEY'),
             ],
         ]);
@@ -26,5 +26,7 @@ class PlaceController extends Controller
         $responseData = json_decode($response->getBody(), true);
 
         return response()->json($responseData['results']);
+
+        
     }
 }

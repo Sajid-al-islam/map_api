@@ -23,6 +23,6 @@ Route::middleware('guest:api')->group(function () {
 });
 
 Route::middleware('auth:api')->group(function () {
-    Route::get('/places', [PlaceController::class, 'place_info']);
+    Route::get('/places', [PlaceController::class, 'place_info'])->middleware('throttle:60,1');
     Route::post('/logout', [AuthController::class, 'logout']);
 });
